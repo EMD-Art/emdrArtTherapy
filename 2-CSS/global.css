@@ -215,3 +215,67 @@ form#bookingForm textarea {
   min-height: 80px;
   max-height: 180px;
 }
+
+/* --- Enhanced Course Info Box --- */
+.course {
+  background-color: #fdfaf7;
+  border: 1px solid #e7dcd1;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(90, 77, 68, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.course:hover {
+  box-shadow: 0 6px 16px rgba(90, 77, 68, 0.12);
+}
+
+.course h3 {
+  color: #453c33;
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.course p {
+  color: #5a4d44;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Optional subtle divider between course cards */
+.course + .course {
+  border-top: 1px solid #e8e0d5;
+  padding-top: 2rem;
+}
+
+/* Fade-in for expanded details */
+#more,
+#sept-course-more {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button alignment fix */
+#readMoreBtn, #septReadMoreBtn {
+  margin-top: 1rem;
+}
+
+/* Optional: Add gentle border around sections */
+section.course-info,
+section.course-description {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px solid #f0e6dd;
+}
