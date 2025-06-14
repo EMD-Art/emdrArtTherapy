@@ -15,7 +15,30 @@
     <h1>Supportive Tools and Training for Trauma-Informed Practice</h1>
     <p>Explore courses, publications, and curated resources for EMDR and mental health professionals.</p>
     <a href="../4-pages/booking.html" class="button">View Courses</a>
-  </header>
+    <img 
+    src="../5-assets/images/calmDrawing.jpeg" 
+    alt="calm drawing of ocean" 
+    style="margin-top: 1rem; width: 100%; max-width: 880px; max-height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
+  />
+    </header>
+
+    <!-- Testimonials Section -->
+<section class="testimonials" style="margin: 3rem auto; max-width: 800px; padding: 1rem;">
+  <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">Participant Reviews</h2>
+
+  <blockquote style="font-style: italic; margin-bottom: 1.5rem; border-left: 4px solid #ccc; padding-left: 1rem;">
+    “As someone new to EMDR, I appreciated the clarity and depth of explanation.”
+  </blockquote>
+  <blockquote style="font-style: italic; margin-bottom: 1.5rem; border-left: 4px solid #ccc; padding-left: 1rem;">
+    “This workshop helped me think creatively about using bilateral stimulation and resourcing within the AIP model.”
+  </blockquote>
+  <blockquote style="font-style: italic; margin-bottom: 1.5rem; border-left: 4px solid #ccc; padding-left: 1rem;">
+    “A truly helpful and practical addition to my existing practice. The course content complemented my work beautifully.”
+  </blockquote>
+  <blockquote style="font-style: italic; margin-bottom: 1.5rem; border-left: 4px solid #ccc; padding-left: 1rem;">
+    “The training created a safe space where I felt confident to share ideas, ask questions, and explore the application of new techniques.”
+  </blockquote>
+</section>
 
   <!-- EMDR Info -->
   <section class="info-section">
@@ -57,6 +80,12 @@
 
   <!-- Resources Section -->
   <section class="resources">
+    <img 
+      src="../5-assets/images/durres.jpeg" 
+      alt="durres with EMDART logo" 
+      style="width: 200px; max-height: 320px; object-fit: cover; float: right; margin: 0 0 1rem 1rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"
+    />
+  
     <h2>Explore Resources</h2>
     <ul class="resource-grid">
       <li><a href="../4-pages/booking.html">📚 Courses</a></li>
@@ -67,7 +96,8 @@
       <li><a href="#">📖 Publications</a></li>
     </ul>
   </section>
-
+  
+  
   <!-- Featured Publication -->
   <section class="featured">
     <h2>Featured Publication</h2>
@@ -84,12 +114,12 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 EMDR Art. All rights reserved.</p>
+    <p>© Social Art Therapy Ltd. All rights reserved.</p>
   </footer>
 
   <!-- Load navbar -->
   <script>
-    fetch("../1-index-html/navbar.html")
+    fetch("navbar.html")
       .then(response => {
         if (!response.ok) throw new Error('Navbar not found');
         return response.text();
