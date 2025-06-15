@@ -1,26 +1,294 @@
-<nav class="navbar">
-  <div class="logo">
-    <a href="/index.html">
-      <img src="/5-assets/images/logoText1.jpeg" alt="Site Logo" />
-    </a>
-  </div>
-  <div class="nav-links">
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="../4-pages/booking.html">Courses</a></li>
-      <li><a href="../4-pages/blog.html">Blog</a></li>
-      <li><a href="../4-pages/mail.html">Mailing List</a></li>
-      <!-- Hidden pages -->
-      <!-- <li><a href="../4-pages/pdfs.html">Course Materials</a></li> -->
-      <!-- <li><a href="../4-pages/videos.html">Course Videos</a></li> -->
-      <li class="publications">
-        <a href="#">Publications</a>
-        <ul>
-          <li><a href="https://www.poetryfoundation.org/poems/55545/one-art" target="_blank">Poem: One Art</a></li>
-          <li><a href="https://www.theparisreview.org/interviews/3897/the-art-of-poetry-no-83-philip-levine" target="_blank">Interview: Philip Levine</a></li>
-          <li><a href="https://www.poetryfoundation.org/poets/mary-oliver" target="_blank">Poet: Mary Oliver</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+/* base body and container */
+body {
+  background-color: #fcf9f6; /* warm cream */
+  font-family: 'DM Sans', sans-serif; /* relaxed, smooth font */
+  color: #1D0200; /* soft dark brown */
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+body > * {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.navbar {
+  background-color: #3a2f2f;
+  padding: 12px 20px;
+  box-shadow: 0 2px 5px rgba(80, 60, 40, 0.1);
+  display: flex;
+  align-items: flex-start; /* Align top of logo and text */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 64px; /* You can tweak this */
+  display: block;
+}
+
+/* Allow nav-links to wrap and grow */
+.nav-links {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.nav-links li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f3e9de;
+  font-weight: 600;
+  padding: 10px 16px;
+  display: inline-block;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #c9b89a;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown submenu for publications */
+.navbar li.publications:hover > ul {
+  display: block;
+}
+
+.navbar li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #5a4d44;
+  padding: 10px 0;
+  min-width: 220px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(80, 60, 40, 0.1);
+  z-index: 9999;
+}
+
+.navbar li ul li {
+  padding: 0 20px;
+}
+
+.navbar li ul li a {
+  padding: 8px 12px;
+  display: block;
+  color: #f3e9de;
+}
+
+.navbar li ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #d1c5ad;
+}
+
+/* General calm link styling for body content */
+a {
+  color: #7a6b58;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #a5937a;
+  text-decoration: underline;
+}
+
+/* Button */
+.button {
+  background-color: #dbcfc0; /* soft beige */
+  color: #5a4d44;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(90, 77, 68, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background-color: #c9b89a;
+  color: #453c33;
+  box-shadow: 0 4px 12px rgba(90, 77, 68, 0.25);
+}
+
+/* Collapsible details with gentle style */
+details {
+  background: none;
+  border-left: 3px solid #d8c0a9;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Georgia', serif;
+  color: #5a4d44;
+  line-height: 1.6;
+}
+
+summary {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #7a6b58;
+  cursor: pointer;
+  position: relative;
+  padding-right: 2rem;
+  user-select: none;
+}
+
+summary::after {
+  content: "›";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  color: #bba67a;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+details[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+details p {
+  margin-top: 0.8rem;
+  color: #6c5b47;
+}
+
+/* Booking form */
+form#bookingForm {
+  background-color: #f9f6f2;
+  border: 1px solid #e0d8cf;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(90, 77, 68, 0.05);
+}
+
+form#bookingForm h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.6rem;
+  color: #574f45;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #574f45;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  border: 1px solid #d8c0a9;
+  border-radius: 8px;
+  background-color: #fffefc;
+  color: #574f45;
+  box-sizing: border-box;
+}
+
+form#bookingForm textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 180px;
+}
+
+/* --- Course Info Box --- */
+.course {
+  background-color: #fdfaf7;
+  border: 1px solid #e7dcd1;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(90, 77, 68, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.course:hover {
+  box-shadow: 0 6px 16px rgba(90, 77, 68, 0.12);
+}
+
+.course h3 {
+  color: #453c33;
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.course p {
+  color: #5a4d44;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.course + .course {
+  border-top: 1px solid #e8e0d5;
+  padding-top: 2rem;
+}
+
+#more,
+#sept-course-more {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button alignment fix */
+#readMoreBtn,
+#septReadMoreBtn {
+  margin-top: 1rem;
+}
+
+/* Optional: section border for visual grouping */
+section.course-info,
+section.course-description {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px solid #f0e6dd;
+}
+
